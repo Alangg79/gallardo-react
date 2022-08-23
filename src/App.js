@@ -1,27 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import { ChakraProvider } from '@chakra-ui/react'
+import NavBar from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <ChakraProvider>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+
+    <div>
+      <NavBar />
+      
+      <div>
+        <h3>Estos son los productos que tenemos para vos </h3>
+        <p></p>
+        <br />
+        <a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
+      </div>
+      
     </div>
-    </ChakraProvider>
+   
   );
 }
 
