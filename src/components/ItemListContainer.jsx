@@ -1,13 +1,18 @@
 import React from 'react';
+import productos from './ListadoDeProductos';
 
-const ItemListContainer = (props) => {
-    console.log(props);
+
+
+const ItemListContainer = ({saludo}) => {
+    
   return (
     <div>
-      <p>{props.saludo}</p>
+      <p>{saludo}</p>
     </div>
+    
   );
 }
+
 
 export default ItemListContainer;
 
