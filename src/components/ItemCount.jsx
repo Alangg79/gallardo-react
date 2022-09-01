@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 const ItemCount = () => {
   const [contador, setContador] = useState(1);
+  const [stock, setStock] = useState (10);
 
   const increase = () => {
-    setContador(contador >= 10 ? setContador : contador + 1); 
+    setContador(contador >= 10 ? contador : contador + 1); 
   };
 
   const decrease = () => {
-    setContador(contador <= 1 ? setContador : contador - 1);
+    setContador(contador <= 1 ? contador : contador - 1);
   };
 
   const confirm = () => {

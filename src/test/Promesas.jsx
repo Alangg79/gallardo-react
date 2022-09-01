@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ItemList from './ItemList';
 
-
-
+export default function Promesas() {
+  const [loading, setLoading] = useState(true);
+  const [productos, setProductos] = useState([]);
+  const [error, setError] = useState('');
 
   const ItemListContainer = ({saludo}) => {
     
@@ -14,18 +15,13 @@ import ItemList from './ItemList';
     );
   }
 
-  export default function Promesas() {
-    const [loading, setLoading] = useState(true);
-    const [productos, setProductos] = useState([]);
-    const [error, setError] = useState('');
-
   useEffect(() => {
     let promesaProductos = new Promise((res, rej) => {
       setTimeout(() => {
         res([
-          { id: 100, name: 'Campera Adidas', price: 20000 },
-          { id: 101, name: 'Zapatilla Reebok', price: 15000 },
-          { id: 102, name: 'Gorra Deportiva Original Puma', price: 4000 },
+          { id: 100, name: 'zapato nike', price: 100 },
+          { id: 101, name: 'cartera nike', price: 150 },
+          { id: 102, name: 'pelota adidas', price: 200 },
         ]);
       }, 2000);
     });
@@ -46,15 +42,13 @@ import ItemList from './ItemList';
     <div>
       <p>Loading: {loading ? 'Loading...' : 'fin'}</p>
       <p>Error: {error ? error : null}</p>
-
-      <ItemList/>
-      
-
+      {productos.map((item) => (
+        <div>
+          <p>{item.id}</p>
+          <p>{item.name}</p>
+          <p>{item.price}</p>
+        </div>
+      ))}
     </div>
   );
 }
-
-
-
-
-
