@@ -6,18 +6,12 @@ import ItemList from './ItemList';
 
   const ItemListContainer = ({saludo}) => {
     
-    return (
-      <div>
-        <p>{saludo}</p>
-      </div>
-      
-    );
-  }
-
-  export default function Promesas() {
     const [loading, setLoading] = useState(true);
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState('');
+      
+    ;
+ 
 
   useEffect(() => {
     let promesaProductos = new Promise((res, rej) => {
@@ -43,16 +37,26 @@ import ItemList from './ItemList';
   }, []);
 
   return (
+
+
+<div>
+      <h1>{saludo}</h1>
     <div>
+
+    
       <p>Loading: {loading ? 'Loading...' : 'fin'}</p>
       <p>Error: {error ? error : null}</p>
 
-      <ItemList/>
-      
+      <ItemList productos={productos}/>
 
     </div>
+</div>
   );
+
 }
+ export default ItemListContainer
+
+
 
 
 
