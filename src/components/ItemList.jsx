@@ -5,8 +5,8 @@ import Item from "./Item";
 const ItemList =({productos}) => {
   return (
     <>
-    {productos.map((item) =>(
-      <Item item ={item} />
+      {productos.map((item) =>  (
+      <Item key={item.id} item={item} />
     ))}
     </>
   )

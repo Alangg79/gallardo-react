@@ -3,6 +3,8 @@ import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import FetchContainer from './test/FetchContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 
@@ -31,8 +33,10 @@ function App() {
 
         <a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
       </div>
-      
+      <ItemDetailContainer/>
     </div>
+
+    
    
   );
 }

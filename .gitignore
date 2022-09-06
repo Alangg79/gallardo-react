@@ -2,6 +2,7 @@
 
 
 /test
+/test/FetchContainer
 # dependencies
 /node_modules
 /.pnp

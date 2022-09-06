@@ -17,9 +17,9 @@ import ItemList from './ItemList';
     let promesaProductos = new Promise((res, rej) => {
       setTimeout(() => {
         res([
-          { id: 100, name: 'Campera Adidas', price: 20000 },
-          { id: 101, name: 'Zapatilla Reebok', price: 15000 },
-          { id: 102, name: 'Gorra Deportiva Original Puma', price: 4000 },
+          { id: 100, name: 'Campera Adidas', price: 20000, category:'nuevo', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis', img:'https://i.ibb.co/Gtrbhpd/campera-Adidas.webp', stock:5 },
+          { id: 101, name: 'Zapatilla Reebok', price: 15000,category:'usado', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis', img:'https://i.ibb.co/H7mMBNF/zapatilla-Reebok.jpg', stock:10 },
+          { id: 102, name: 'Gorra Deportiva Original Puma', price: 4000,category:'nuevo', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis', img:'https://i.ibb.co/fnr85xz/gorra-Puma.jpg', stock:8 },
         ]);
       }, 2000);
     });
