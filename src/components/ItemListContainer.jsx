@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 
 
 
-  const ItemListContainer = ({saludo}) => {
+  const ItemListContainer = ({}) => {
     
     const [loading, setLoading] = useState(true);
     const [productos, setProductos] = useState([]);
@@ -40,8 +40,7 @@ import ItemList from './ItemList';
 
 
 <div>
-      <h1>{saludo}</h1>
-    <div>
+      <div>
 
     
       <p>Loading: {loading ? 'Loading...' : 'fin'}</p>

@@ -5,20 +5,13 @@ const Item =({item}) => {
 
     return (
           
-        <div> 
-        <div className="card" style={{width:'20rem', margin:'.5rem'}}></div>
         <div>
-            <img class="card-img-top" src={item.img} alt="Card image cap"/>
-            
-                    <p>{item.id}</p>
-                    <p>{item.name}</p>
-                    <p>{item.price}</p>
-                    <p>{item.category}</p>
-                    <p>{item.description}</p>            
-                    <p>{item.stock}</p>
-                    
-        </div>
-        </div>
+        <h3>{item.name}</h3>
+        <img style={{widht:"150px"}} src={item.img} alt= 'img prod' />
+        <div style ={{widht: "450px"}}>{item.description}</div>
+        <div>{item.price}</div>
+        <div>{item.stock}</div>
+      </div>
         
 
 

@@ -10,7 +10,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
-  const saludo ='Bienvenidos'
+  
   return (
     
   
@@ -19,10 +19,10 @@ function App() {
       <NavBar />
 
       <div>
+        <h1>Bienvenidos</h1>
         <h3>Estos son los productos que tenemos para vos </h3>
         <p></p>
-
-      <ItemListContainer saludo = {saludo}/>
+        <ItemDetailContainer/>
       
 
 
@@ -33,7 +33,7 @@ function App() {
 
         <a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
       </div>
-      <ItemDetailContainer/>
+      
     </div>
 
     
