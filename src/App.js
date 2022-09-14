@@ -10,16 +10,10 @@ import ItemListContainer from './components/ItemListContainer';
 
 
 
-function App() {
-  
-  return (
-    
-  
+function App() {  
+  return ( 
 
-    <div>
-
-
-      
+    <div>      
 
       <BrowserRouter>
 
@@ -30,14 +24,13 @@ function App() {
         <Routes>
 
           <Route path='/' element={<ItemListContainer/>} />
-          <Route path='/category/:idcategory' element={<ItemDetailContainer/>}/>
+          <Route path='/category/:idcategory' element={<ItemListContainer/>}/>
           <Route path='/product/:idproduct' element={<ItemDetailContainer/>}/>
           
         </Routes>
 
         <div>      
-        <br />
-        <ItemCount />
+        <br />        
 
         <a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
       </div>
