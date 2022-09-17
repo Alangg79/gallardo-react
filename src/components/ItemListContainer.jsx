@@ -44,12 +44,12 @@ const productosMP = [
   }, [idcategory]);
 
   return (
-<div>
+<>
       <div>    
       <p>{loading ? 'Loading...' : (<ItemList productos={productos}/>)}</p>
     </div>
 
-</div>
+</>
   );
 
 }

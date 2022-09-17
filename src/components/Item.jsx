@@ -8,7 +8,7 @@ const Item =({item}) => {
 
     return (
           
-        <div>
+        <>
             
         <h3>{item.name}</h3>
       <img style={{widht:"150px"}} src={item.img} alt= 'img prod' />
@@ -19,7 +19,7 @@ const Item =({item}) => {
       <ItemCount/>    
         <button className='btn btn-primary' onClick={()=>navegar(`/product/${item.id}`)}>Ver más</button>
         
-        </div>     
+        </>     
         
 
 

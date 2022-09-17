@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import ItemDetail from "./ItemDetail";
 
-const ItemCount = () => {
-  const [contador, setContador] = useState(1);
-  const [stock, setStock] = useState (10);
+
+const ItemCount = ({contador,setContador, onAdd}) => {
+  
+  
 
   const increase = () => {
     setContador(contador >= 10 ? contador : contador + 1); 
@@ -12,16 +14,15 @@ const ItemCount = () => {
     setContador(contador <= 1 ? contador : contador - 1);
   };
 
-  const confirm = () => {
-    console.log("Tiene funcionalidad");
-  };
+
+
 
   return (
     <>
       <button onClick={increase}> + </button>
       <button onClick={decrease}> - </button>
       <h1>{contador}</h1>      
-      <button className='btn btn-primary' onClick={confirm}> Agregar al carrito </button>
+      <button onClick={onAdd} className='btn btn-primary'> Agregar al carrito </button>
     </>
   );
 };

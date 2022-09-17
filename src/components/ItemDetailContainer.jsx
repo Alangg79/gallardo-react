@@ -37,10 +37,10 @@ const ItemDetailContainer = () => {
     },[idproduct])
 
     return (
-      <div>
+      <>
         {loading ? ("CARGANDO PRODUCTO") : (<ItemDetail item={productDetail}/>)}
         
-      </div>
+      </>
     );
 
 
