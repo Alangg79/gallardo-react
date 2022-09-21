@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart';
+import { CartProvider } from './context/CartContext';
+
 
 
 
@@ -14,30 +16,32 @@ function App() {
   return ( 
 
     <div>      
+      
+<CartProvider>
+<BrowserRouter>
 
-      <BrowserRouter>
+<NavBar />
 
-        <NavBar />
+<h1>Bienvenidos</h1>
+<h3>Estos son los productos que tenemos para vos </h3>
+<Routes>
 
-        <h1>Bienvenidos</h1>
-        <h3>Estos son los productos que tenemos para vos </h3>
-        <Routes>
+  <Route path='/' element={<ItemListContainer/>} />
+  <Route path='/category/:idcategory' element={<ItemListContainer/>}/>
+  <Route path='/product/:idproduct' element={<ItemDetailContainer/>}/>
+  <Route path='/cart' element={<Cart/>}/>
+  
+</Routes>
 
-          <Route path='/' element={<ItemListContainer/>} />
-          <Route path='/category/:idcategory' element={<ItemListContainer/>}/>
-          <Route path='/product/:idproduct' element={<ItemDetailContainer/>}/>
-          <Route path='/cart' element={<Cart/>}/>
-          
-        </Routes>
+<div>      
+<br />        
 
-        <div>      
-        <br />        
+<a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
+</div>
 
-        <a href='https://www.facebook.com/marketplace/?ref=app_tab'>Ir a Market</a>
-      </div>
-
-        <Footer/>
-      </BrowserRouter>
+<Footer/>
+</BrowserRouter>
+</CartProvider>
 
 
       
