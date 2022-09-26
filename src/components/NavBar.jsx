@@ -1,6 +1,6 @@
 import React from 'react';
 import CardWidget from './CardWidget';
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -31,7 +31,13 @@ const NavBar = () => {
           </ul>
         </li>
       </ul>
-      <CardWidget counter={10}/>
+
+      <NavLink to = "/cart" className="nav-link active">
+
+      <CardWidget/>
+
+      </NavLink>
+      
     </div>
   </div>
 </nav>

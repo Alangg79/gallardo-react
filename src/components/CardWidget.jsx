@@ -1,12 +1,20 @@
 import React from 'react';
+import { useCart } from '../context/CartContext';
 
-const CardWidget = ({counter}) => {
-  return (
-    <div>
-      <span>🛒</span>
-      <span>{counter}</span>
-    </div>
-  );
+const CardWidget = ({}) => {
+
+  const{cartQuantity} = useCart()
+
+return (
+  <div>
+    <span>🛒{cartQuantity() || ''}</span>
+  </div>
+);
 }
 
+
 export default CardWidget;
+
+
+
+
