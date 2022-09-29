@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { collection, doc, getDoc } from 'firebase/firestore';
+import { db } from '../Firebase/Firebase';
+import { data } from '../mocks/mockData'
 
 const productosMP = [
   { id: 100, name: 'Campera Adidas', price: 20000, category:'camperas',condition:'Nuevo', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis', img:'https://i.ibb.co/Gtrbhpd/campera-Adidas.webp', stock:5 },
@@ -22,19 +25,35 @@ const productosMP = [
 
 const ItemDetailContainer = () => {
 
-  const { idcategory, idproduct } = useParams();
-  console.log('idcategory: ', idcategory);
-  console.log('idproduct: ', idproduct);
-  
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const [productDetail, setProductDetail] = useState([]);
+  const [productDetail, setProductDetail] = useState({});
+
+
+  useEffect(() => {
+
+    const coleccionProductos = collection(db, "products")
+
+    const referenciaDoc = doc(coleccionProductos, id)
+
+    getDoc(referenciaDoc)
+
+    .then((result) =>{
+      setProductDetail({
+        id: result.id,
+        ...result.data()
+      })
+    })
+    .catch((error) => console.log(error))
+    .finally(() => setLoading(false))
+  }, [])
   
-    useEffect(() => {
-      setProductDetail((productosMP.find((producto) => producto.id === parseInt(idproduct))))
-      setTimeout(() => {
-        setLoading(false);
-      },2000)
-    },[idproduct])
+    // useEffect(() => {
+    //   setProductDetail((productosMP.find((producto) => producto.id === parseInt(idproduct))))
+    //   setTimeout(() => {
+    //     setLoading(false);
+    //   },2000)
+    // },[idproduct])
 
     return (
       <>

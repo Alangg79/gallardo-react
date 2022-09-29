@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../Firebase/Firebase';
+import {data} from '../mocks/mockData'
+
 
 const productosMP = [
   { id: 100, name: 'Campera Adidas', price: 20000, category:'camperas',condition:'Nuevo', description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis', img:'https://i.ibb.co/Gtrbhpd/campera-Adidas.webp', stock:5 },
@@ -20,28 +24,46 @@ const productosMP = [
 
   const ItemListContainer = ({}) => {
 
-    const { idcategory, idproduct } = useParams();
+    const {idcategory} = useParams();
     console.log('idcategory: ', idcategory);
-    console.log('idproduct: ', idproduct);
     
-    const [loading, setLoading] = useState(true);
+    
+    const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
       
- 
+
+  //firebase
 
   useEffect(() => {
-    (!idcategory)
-    ?
-    setProductos(productosMP)
-    :
-    setProductos(productosMP.filter((producto) => producto.category===idcategory))
+    setLoading(true)
+    const productos= idcategory ?query(collection(db, "products"), where("category", "==", idcategory)) : collection(db, "products")
+    getDocs(productos)
+    .then((result) =>{
+      const lista = result.docs.map((product) => {
+        return{
+          id:product.id,
+          ...product.data()
+        }
+      })
+      setProductos(lista)
+    })
+    .catch((error) => console.log(error))
+    .finally(() => setLoading(false))
+  }, [idcategory])
 
-    setTimeout(() => {
-      setLoading(false)
-    },2000)
+  // useEffect(() => {
+  //   (!idcategory)
+  //   ?
+  //   setProductos(productosMP)
+  //   :
+  //   setProductos(productosMP.filter((producto) => producto.category===idcategory))
+
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   },2000)
 
 
-  }, [idcategory]);
+  // }, [idcategory]);
 
   return (
 <>

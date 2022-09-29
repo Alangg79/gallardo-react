@@ -18,6 +18,7 @@ const ItemDetail = ({item}) => {
 
   const onAdd = () => {
     let purchase = {
+      id,
       name,
       price,
       stock,
