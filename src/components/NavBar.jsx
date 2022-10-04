@@ -21,6 +21,9 @@ const NavBar = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/category/gorras">Gorras</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/comprar">Tu compra</Link>
+        </li>
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ver Más

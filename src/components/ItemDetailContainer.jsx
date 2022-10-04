@@ -25,7 +25,7 @@ const productosMP = [
 
 const ItemDetailContainer = () => {
 
-  const { id } = useParams();
+  const { idproduct } = useParams();
   const [loading, setLoading] = useState(true);
   const [productDetail, setProductDetail] = useState({});
 
@@ -34,13 +34,13 @@ const ItemDetailContainer = () => {
 
     const coleccionProductos = collection(db, "products")
 
-    const referenciaDoc = doc(coleccionProductos, id)
+    const referenciaDoc = doc(coleccionProductos, idproduct)
 
     getDoc(referenciaDoc)
 
     .then((result) =>{
       setProductDetail({
-        id: result.id,
+        idproduct: result.idproduct,
         ...result.data()
       })
     })

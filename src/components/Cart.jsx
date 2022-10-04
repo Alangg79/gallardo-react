@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import CartItem from './CartItem';
+import {Link, NavLink} from 'react-router-dom'
 
 
 const Cart = () => {
@@ -23,8 +24,11 @@ const Cart = () => {
           {cart.map((compra) => <CartItem key={compra.id} compra={compra}/>)}
 
           <span>Total a pagar : $ {cartTotal()}</span>
+          <br/>
+          <br/>
+          <br/>
           <button className='btn btn-danger' onClick={clear}> Vaciar carrito </button>
-          <button className='btn btn-success'> Terminar compra</button>
+          <Link className="nav-link" to="/comprar"> <button className='btn btn-success'> Terminar compra</button></Link>
         </div>
       }
       
