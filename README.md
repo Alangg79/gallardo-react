@@ -68,3 +68,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Descripcion del proyecto: Este proyecto en particular tiene una idea similar al Market Place de la plataforma Facebook donde por el mismo se pueden realizar compras de todo tipo, en este caso la pagina se orienta mas a lo que es la parte de indumentaria, donde se puede realizar la compra de diferentes articulos, la libreria que utilice fue Bootstrap y el link del deploy es (https://gallardo-react.vercel.app/category/zapatillas), gracias
