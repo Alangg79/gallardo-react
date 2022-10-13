@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 
 const Item =({item}) => {
@@ -9,12 +10,22 @@ const Item =({item}) => {
   const [compra, setCompra]=useState(false)
   const {id, name,price, category, condition, description, img, stock}=item
   const navegar = useNavigate()
-   console.log(contador);
+  const {addItem}= useCart()
+  
 
 
   const onAdd = () => {
-    console.log(`Se realizo la compra de ${contador} ${name}`);
     setCompra(true)
+    let purchase = {
+      id,
+      name,
+      price,
+      stock,
+      img,
+      quantity: contador
+    }
+    setCompra(true)
+    addItem(purchase)
   };
 
     return (

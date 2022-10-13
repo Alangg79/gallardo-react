@@ -13,9 +13,8 @@ const ItemDetail = ({item}) => {
   const {id, name,price, category, condition, description, img, stock,quantity}=item
   const navegar = useNavigate()
   const {addItem}= useCart()
-   console.log(contador);
-
-
+  
+  
   const onAdd = () => {
     let purchase = {
       id,

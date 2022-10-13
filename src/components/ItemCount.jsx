@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ItemDetail from "./ItemDetail";
+import React from "react";
+
 
 
 const ItemCount = ({contador,setContador, onAdd}) => {
@@ -13,8 +13,6 @@ const ItemCount = ({contador,setContador, onAdd}) => {
   const decrease = () => {
     setContador(contador <= 1 ? contador : contador - 1);
   };
-
-
 
 
   return (

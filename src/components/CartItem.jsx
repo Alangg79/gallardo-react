@@ -1,6 +1,8 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 
+
+
 const CartItem = ({compra}) => {
     const{removeItem} =useCart()
 
@@ -11,6 +13,7 @@ const CartItem = ({compra}) => {
     <span>{compra.quantity}</span>
     <span>{compra.price}</span>
     <button className='btn btn-danger' onClick={ () => removeItem(compra.id)}>X</button>
+    
 
   </div>
   );

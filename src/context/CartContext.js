@@ -2,8 +2,11 @@ import { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext()
 
+
+
 export const CartProvider =({children}) => {
     const [cart, setCart]= useState ([])
+
 
     const addItem = (item) => {
         const existsInCart = cart.find((prod) => prod.id === item.id)
@@ -25,9 +28,10 @@ export const CartProvider =({children}) => {
     }
 
     const clear = () => {
-        setCart=([])
+        setCart([])
 
     }
+
 
     const removeItem =(id) => {
         setCart(cart.filter((prod) => prod.id !== id))

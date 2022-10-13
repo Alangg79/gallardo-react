@@ -4,7 +4,10 @@ import React from 'react'
 import { useState } from 'react';
 import {addDoc, collection, getFirestore} from 'firebase/firestore'
 
+
 export default function Comprar() {
+
+
 
     const[nombre, setNombre]= useState("")
     const[telefono, setTelefono]= useState("")
@@ -36,7 +39,7 @@ export default function Comprar() {
 
     addDoc(miColeccion,ordenDeCompra). then(({id}) => {
       setIdCompra(id)
-    }) .catch((e) => {
+    }) .catch ((e)=> {
       setApagarBoton(false)
     })
 
@@ -44,20 +47,23 @@ export default function Comprar() {
 
   return (
     <div>
-        {cartel && 'ERROR' + cartel}
+      <br/>
+      <h2>➡️Muchas gracias por su compra🛒🛒, ingrese a continuacion sus datos: </h2>
+
+      <br/>
+
+        {cartel && 'Ha ocurrido un error, ' + cartel}
        <br />
-        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder='Ingrese su nombre' type={"text"}/>
+      <br/>
+        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder='Nombre' type={"text"}/>
         <br/>
-        <input value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder='Ingrese su telefono' type={"text"}/>
+        <input value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder='Telefono' type={"text"}/>
         <br/>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Ingrese su mail' type={"text"}/>
+        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='E-mail' type={"text"}/>
         <br/>
-        {!idCompra?  !apagarBoton ? <button onClick={terminarCompra}>TERMINAR COMPRA</button> :'Loading..' : <p>Gracias por su compra, su numero de ticket asignado es  + {idCompra }</p> }
         <br/>
-
-
-
-
+        {!idCompra?  !apagarBoton ? <button onClick={terminarCompra}>TERMINAR COMPRA</button> :'Loading..' : <h4>Gracias por su compra Sr.{nombre}, a continuacion, su numero de ticket asignado es  + {idCompra } </h4> }
+        <br/>
 
     </div>
   );

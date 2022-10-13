@@ -1,5 +1,5 @@
 import React from 'react';
-import CardWidget from './CardWidget';
+
 
 const Footer = () => {
   return (
